@@ -1,8 +1,13 @@
 package com.company.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Arrays;
 
 public class CustomArray {
+
+    static Logger logger = LogManager.getLogger();
 
     private int[] customArray;
 
@@ -14,7 +19,7 @@ public class CustomArray {
     }
 
     public int[] getCustomArray() {
-        return customArray;
+        return customArray.clone();
     }
 
     public void setCustomArray(int[] customArray) {

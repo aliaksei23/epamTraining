@@ -3,8 +3,6 @@ package com.company.service.impl;
 import com.company.entity.CustomArray;
 import com.company.exception.CustomException;
 import com.company.service.CustomArrayFindService;
-
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class CustomArrayFindServiceImpl implements CustomArrayFindService {
@@ -39,14 +37,9 @@ public class CustomArrayFindServiceImpl implements CustomArrayFindService {
 
     @Override
     public int findSum(CustomArray customArray) {
-        int sum = 0;
         int[] array = customArray.getCustomArray();
         CustomException.arrayLengthCheck(array);
-        //        IntStream.of(array).sum();
-        for(int anArray : array) {
-            sum += anArray;
-        }
-        return sum;
+        return IntStream.of(array).sum();
     }
 
     @Override
@@ -61,27 +54,13 @@ public class CustomArrayFindServiceImpl implements CustomArrayFindService {
     public int findSumOfPositiveArguments(CustomArray customArray) {
         int[] array = customArray.getCustomArray();
         CustomException.arrayLengthCheck(array);
-        //        IntStream.of(array).filter(a -> a > 0).sum();
-        int positiveSum = 0;
-        for(int anArray : array) {
-            if(anArray > 0) {
-                positiveSum += anArray;
-            }
-        }
-        return positiveSum;
+        return IntStream.of(array).filter(a -> a > 0).sum();
     }
 
     @Override
     public int findSumOfNegativeArguments(CustomArray customArray) {
         int[] array = customArray.getCustomArray();
         CustomException.arrayLengthCheck(array);
-        //        IntStream.of(array).filter(a -> a < 0).sum();
-        int negativeSum = 0;
-        for(int anArray : array) {
-            if(anArray < 0) {
-                negativeSum += anArray;
-            }
-        }
-        return negativeSum;
+        return IntStream.of(array).filter(a -> a < 0).sum();
     }
 }
