@@ -3,10 +3,14 @@ package com.company.service.impl;
 import com.company.entity.CustomArray;
 import com.company.exception.CustomException;
 import com.company.service.CustomArrayReplaceArgService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.stream.IntStream;
 
 public class CustomArrayReplaceArgServiceImpl implements CustomArrayReplaceArgService {
+
+    private static final Logger logger = LogManager.getLogger(CustomArrayReplaceArgServiceImpl.class);
 
     @Override
     public int[] replaceArguments(CustomArray customArray, int replacement) {

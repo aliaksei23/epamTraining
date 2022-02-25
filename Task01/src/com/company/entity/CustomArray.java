@@ -4,10 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
+import java.util.StringJoiner;
 
 public class CustomArray {
 
-    static Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger(CustomArray.class);
 
     private int[] customArray;
 
@@ -15,6 +16,7 @@ public class CustomArray {
     }
 
     public CustomArray(int[] customArray) {
+        logger.trace("create CustomArray");
         this.customArray = customArray;
     }
 
@@ -28,9 +30,9 @@ public class CustomArray {
 
     @Override
     public String toString() {
-        return "CustomArray{" +
-                "customArray=" + Arrays.toString(customArray) +
-                '}';
+        return new StringJoiner(", ", CustomArray.class.getSimpleName() + "[", "]")
+                .add("customArray=" + Arrays.toString(customArray))
+                .toString();
     }
 
     @Override

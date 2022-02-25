@@ -3,9 +3,14 @@ package com.company.service.impl;
 import com.company.entity.CustomArray;
 import com.company.exception.CustomException;
 import com.company.service.CustomArrayFindService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.stream.IntStream;
 
 public class CustomArrayFindServiceImpl implements CustomArrayFindService {
+
+    private static final Logger logger = LogManager.getLogger(CustomArrayFindServiceImpl.class);
 
     @Override
     public int findMin(CustomArray customArray) {

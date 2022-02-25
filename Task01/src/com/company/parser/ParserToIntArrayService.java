@@ -1,4 +1,4 @@
-package com.company.service;
+package com.company.parser;
 
 public interface ParserToIntArrayService {
 

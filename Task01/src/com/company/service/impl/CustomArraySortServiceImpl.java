@@ -3,8 +3,12 @@ package com.company.service.impl;
 import com.company.entity.CustomArray;
 import com.company.exception.CustomException;
 import com.company.service.CustomArraySortService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CustomArraySortServiceImpl implements CustomArraySortService {
+
+    private static final Logger logger = LogManager.getLogger(CustomArraySortServiceImpl.class);
 
     @Override
     public int[] bubbleSort(CustomArray customArray) {
