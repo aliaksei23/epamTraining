@@ -1,9 +1,7 @@
-package com.company.test;
+package com.company.service.impl;
 
 import com.company.entity.CustomArray;
-import com.company.service.CustomArrayFindService;
 import com.company.service.CustomArrayReplaceArgService;
-import com.company.service.impl.CustomArrayReplaceArgServiceImpl;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -24,6 +22,6 @@ public class CustomArrayReplaceArgServiceImplTest {
     public void testReplaceArguments() {
         int[] ints = customArrayReplaceArgServiceService.replaceArguments(customArray, 0);
         int[] expected = new int[]{0, 2, 4, 0, 18};
-        assertEquals(expected,ints);
+        assertEquals(expected, ints);
     }
 }

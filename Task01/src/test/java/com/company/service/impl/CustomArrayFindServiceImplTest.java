@@ -1,12 +1,12 @@
-package com.company.test;
+package com.company.service.impl;
 
 import com.company.entity.CustomArray;
 import com.company.service.CustomArrayFindService;
-import com.company.service.impl.CustomArrayFindServiceImpl;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class CustomArrayFindServiceImplTest {
     private CustomArray customArray;
@@ -31,24 +31,24 @@ public class CustomArrayFindServiceImplTest {
     @Test
     public void testFindSum() {
         int sum = customArrayFindService.findSum(customArray);
-        assertEquals(9,sum);
+        assertEquals(9, sum);
     }
 
     @Test
     public void testFindAverage() {
         double average = customArrayFindService.findAverage(customArray);
-        assertEquals(1.8,average);
+        assertEquals(1.8, average);
     }
 
     @Test
     public void testFindSumOfPositiveArguments() {
         int sumOfPositiveArguments = customArrayFindService.findSumOfPositiveArguments(customArray);
-        assertEquals(24,sumOfPositiveArguments);
+        assertEquals(24, sumOfPositiveArguments);
     }
 
     @Test
     public void testFindSumOfNegativeArguments() {
         int sumOfNegativeArguments = customArrayFindService.findSumOfNegativeArguments(customArray);
-        assertEquals(-15,sumOfNegativeArguments);
+        assertEquals(-15, sumOfNegativeArguments);
     }
 }

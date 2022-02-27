@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class ReadDataServiceImpl implements ReadDataService {
     private static final Logger logger = LogManager.getLogger(ReadDataServiceImpl.class);
+
     private ValidatorService<String> validator = new ValidatorServiceImpl();
 
     @Override

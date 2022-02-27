@@ -1,6 +1,11 @@
 package com.company.exception;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class CustomException extends Exception {
+
+    private static final Logger logger = LogManager.getLogger(CustomException.class);
 
     public CustomException() {
     }
@@ -18,10 +23,11 @@ public class CustomException extends Exception {
     }
 
     public static void arrayLengthCheck(int[] array) {
-        if(array.length <= 0) {
+        if (array.length <= 0) {
             try {
                 throw new CustomException("Array length < 0");
-            } catch(Exception e) {
+            } catch (Exception e) {
+                logger.error("Array has length less than " + array.length);
                 e.printStackTrace();
             }
         }

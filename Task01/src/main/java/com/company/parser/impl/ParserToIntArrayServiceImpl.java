@@ -14,7 +14,7 @@ public class ParserToIntArrayServiceImpl implements ParserToIntArrayService {
         int[] integer = new int[splitString.length];
 
         for(int i = 0; i < splitString.length; i++) {
-            integer[i] = Integer.valueOf(splitString[i]);
+            integer[i] = Integer.parseInt(splitString[i]);
         }
         return integer;
     }

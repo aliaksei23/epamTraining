@@ -1,9 +1,7 @@
-package com.company.test;
+package com.company.service.impl;
 
 import com.company.entity.CustomArray;
-import com.company.service.CustomArrayFindService;
 import com.company.service.CustomArraySortService;
-import com.company.service.impl.CustomArraySortServiceImpl;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -24,13 +22,13 @@ public class CustomArraySortServiceImplTest {
     public void testBubbleSort() {
         int[] sorted = customArrayFindService.bubbleSort(customArray);
         int[] expect = new int[]{-10, -5, 2, 4, 18};
-        assertEquals(expect,sorted);
+        assertEquals(expect, sorted);
     }
 
     @Test
     public void testSelectionSort() {
         int[] sorted = customArrayFindService.selectionSort(customArray);
         int[] expect = new int[]{-10, -5, 2, 4, 18};
-        assertEquals(expect,sorted);
+        assertEquals(expect, sorted);
     }
 }
